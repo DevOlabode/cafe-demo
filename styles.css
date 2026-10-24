@@ -35,8 +35,8 @@ p { margin: 0 0 1em; }
 :focus-visible { outline: 3px solid var(--rye); outline-offset: 2px; }
 
 /* Demo note: a sticky note, in the page on phones, pinned to the corner on desktop */
-.demo-note { position: relative; margin: 14px 20px 6px; padding: 14px 18px; background: #fbe98c; color: #3b3112; font-family: var(--hand); font-size: 1.3rem; line-height: 1.2; transform: rotate(-1deg); box-shadow: 0 6px 14px rgba(42,31,27,.15); }
-.demo-note p { margin: 0 0 4px; }
+.demo-note { position: relative; margin: 10px 20px 4px; padding: 7px 12px; background: #fbe98c; color: #3b3112; font-family: var(--hand); font-size: 1.05rem; line-height: 1.15; transform: rotate(-1deg); box-shadow: 0 6px 14px rgba(42,31,27,.15); }
+.demo-note p { margin: 0 0 2px; }
 .demo-note p:last-child { margin: 0; }
 .demo-note a { font-weight: 700; color: var(--berry); }
 .demo-close { display: none; position: absolute; top: 2px; right: 6px; width: 32px; height: 32px; border: 0; background: none; font-size: 1.4rem; color: #3b3112; cursor: pointer; }
@@ -238,7 +238,7 @@ input:focus, select:focus, textarea:focus { border-bottom-color: var(--berry); o
 @media (min-width: 960px) {
   :root { --header-h: 0px; }
   .order-fab, .nav-toggle { display: none; }
-  .demo-note { position: fixed; left: 20px; bottom: 20px; z-index: 70; width: 270px; margin: 0; padding-right: 34px; transform: rotate(-2deg); }
+  .demo-note { position: fixed; left: 20px; bottom: 20px; z-index: 70; width: 270px; margin: 0; padding: 14px 34px 14px 18px; font-size: 1.3rem; line-height: 1.2; transform: rotate(-2deg); }
   .demo-close { display: block; }
   .site-header { position: static; border-bottom: 0; }
   .header-inner { height: auto; flex-direction: column; gap: 6px; padding-top: 26px; padding-bottom: 6px; }
