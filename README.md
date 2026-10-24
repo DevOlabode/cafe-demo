@@ -2,7 +2,7 @@
 
 A demo website for a made-up café and bakery in St. Albert, Alberta. Built by Samuel Olabode to show local cafés and restaurants what a simple, mobile-friendly site looks like.
 
-Plain HTML, CSS and JavaScript. No build step. Headings use DM Serif Display from Google Fonts (falls back to Georgia).
+Plain HTML, CSS and JavaScript. No build step. Fonts from Google Fonts: Young Serif (headings), Karla (body) and Caveat (chalkboard and handwritten notes). Colours are plum ("bramble") and crust brown ("rye") on an oat background.
 
 ## Features
 

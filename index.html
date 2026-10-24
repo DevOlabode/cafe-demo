@@ -6,34 +6,34 @@
   <title>Bramble &amp; Rye Café and Bakery | St. Albert (Demo)</title>
   <meta name="description" content="Demo website for a made-up café and bakery in St. Albert, Alberta. Built by Samuel Olabode.">
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f4ede1">
   <meta property="og:title" content="Bramble & Rye Café (Demo site)">
   <meta property="og:description" content="Demo website for a local café, built by Samuel Olabode, web developer in Edmonton.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f3a2e'/%3E%3Ctext x='16' y='22.5' font-family='Georgia,serif' font-size='17' text-anchor='middle' fill='%23f2c48d'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%236b2343'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' text-anchor='middle' fill='%23f4ede1'%3E%26amp;%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Karla:wght@400;600;700&family=Young+Serif&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <div class="demo-bar" role="note">
-    <p>Demo website by Samuel Olabode. Bramble &amp; Rye is a made-up business. Want a site like this? Text <a href="sms:+18254611264">825-461-1264</a></p>
+    <p>Demo site by Samuel Olabode. Bramble &amp; Rye is made up. Want one for your business? <a href="sms:+18254611264">Text 825-461-1264</a></p>
   </div>
 
   <header class="site-header">
     <div class="container header-inner">
       <a href="#top" class="brand" aria-label="Bramble and Rye Café, home">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span class="brand-text">Bramble &amp; Rye<span>Café &amp; Bakery</span></span>
+        Bramble <span class="amp">&amp;</span> Rye
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="#menu">Menu</a>
-        <a href="#about">About</a>
+        <a href="#about">Our story</a>
         <a href="#visit">Hours &amp; location</a>
-        <a href="#order" class="btn btn-accent btn-sm">Order ahead</a>
+        <a href="#order" class="btn btn-berry btn-sm">Order ahead</a>
       </nav>
     </div>
   </header>
@@ -41,39 +41,32 @@
   <main id="top">
 
     <section class="hero">
-      <img class="hero-bg" src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?w=2000&q=75&auto=format&fit=crop" alt="" width="2000" height="1333" fetchpriority="high">
-      <div class="container hero-inner">
-        <h1>Coffee, soup and fresh bread in downtown St. Albert</h1>
-        <p class="lead">Everything is baked here every morning. Sit in, grab something to go, or order a dozen cinnamon buns for the office.</p>
-        <div class="hero-actions">
-          <a href="#menu" class="btn btn-accent">See the menu</a>
-          <a href="#order" class="btn btn-outline">Order ahead</a>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Café &amp; bakery &middot; downtown St. Albert</p>
+          <h1>Baked here every morning since 2017.</h1>
+          <p class="lead">Coffee, soup and sandwiches on Bramble Street, plus the cinnamon buns people drive in from Morinville for. Sit in, take something to go, or order a dozen for the office.</p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-berry">See the menu</a>
+            <a href="#order" class="text-link">Order ahead <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?w=1200&q=75&auto=format&fit=crop" alt="The coffee counter in the morning" width="1200" height="800" fetchpriority="high">
+          <div class="chalkboard" aria-label="Today at the café">
+            <p class="chalk-title">Today</p>
+            <p><span class="status-dot" id="status-dot" aria-hidden="true"></span><strong id="open-status">Open 7 days</strong> <span id="open-detail"></span></p>
+            <p>Soup: <span id="soup">Roasted tomato and basil</span></p>
+          </div>
         </div>
       </div>
     </section>
-
-    <div class="today">
-      <div class="container today-grid">
-        <p class="today-item">
-          <span class="status-dot" id="status-dot" aria-hidden="true"></span>
-          <span><strong id="open-status">Hours</strong> <span id="open-detail">Open 7 days</span></span>
-        </p>
-        <p class="today-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16a8 8 0 0 1-16 0z"/><path d="M8 4c0 2 2 2 2 4M12 3c0 2 2 2 2 4M16 4c0 2 2 2 2 4"/></svg>
-          <span><strong>Today's soup:</strong> <span id="soup">Roasted tomato and basil</span></span>
-        </p>
-        <p class="today-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-          <span>12 Bramble Street, St. Albert</span>
-        </p>
-      </div>
-    </div>
 
     <section id="menu" class="section">
       <div class="container">
         <div class="section-head">
           <h2>Menu</h2>
-          <p>Breakfast is served until 11. Soup and sandwiches until we run out, which on Fridays is usually around 2.</p>
+          <p>Breakfast until 11. Soup and sandwiches until we run out, which on Fridays is usually around 2.</p>
         </div>
 
         <div class="menu-tools">
@@ -96,24 +89,24 @@
             <section class="menu-section" id="m-coffee">
               <h3>Coffee &amp; tea</h3>
               <ul class="menu-list">
-                <li data-tags="v gf df"><div><span class="item">Drip coffee</span><span class="desc">Medium roast from a St. Albert roaster. Refills $1.</span></div><span class="price">$2.75</span></li>
-                <li data-tags="v gf df"><div><span class="item">Americano</span></div><span class="price">$3.50</span></li>
-                <li data-tags="v gf df"><div><span class="item">Latte</span><span class="desc">Oat or almond milk +$0.75</span></div><span class="price">$5.00</span></li>
-                <li data-tags="v gf df"><div><span class="item">Cappuccino</span></div><span class="price">$4.75</span></li>
-                <li data-tags="v gf df"><div><span class="item">London Fog</span><span class="desc">Earl grey, vanilla, steamed milk</span></div><span class="price">$5.25</span></li>
-                <li data-tags="v gf df"><div><span class="item">Chai latte</span><span class="desc">Our own spice blend</span></div><span class="price">$5.25</span></li>
-                <li data-tags="v gf"><div><span class="item">Hot chocolate</span></div><span class="price">$4.25</span></li>
-                <li data-tags="v gf df"><div><span class="item">Loose-leaf tea</span><span class="desc">Ask for today's selection</span></div><span class="price">$3.25</span></li>
+                <li data-tags="v gf df"><p class="line"><span class="item">Drip coffee</span><span class="price">2.75</span></p><span class="desc">Medium roast from a St. Albert roaster. Refills $1.</span></li>
+                <li data-tags="v gf df"><p class="line"><span class="item">Americano</span><span class="price">3.50</span></p></li>
+                <li data-tags="v gf df"><p class="line"><span class="item">Latte</span><span class="price">5.00</span></p><span class="desc">Oat or almond milk +.75</span></li>
+                <li data-tags="v gf df"><p class="line"><span class="item">Cappuccino</span><span class="price">4.75</span></p></li>
+                <li data-tags="v gf df"><p class="line"><span class="item">London Fog</span><span class="price">5.25</span></p><span class="desc">Earl grey, vanilla, steamed milk</span></li>
+                <li data-tags="v gf df"><p class="line"><span class="item">Chai latte</span><span class="price">5.25</span></p><span class="desc">Our own spice blend</span></li>
+                <li data-tags="v gf"><p class="line"><span class="item">Hot chocolate</span><span class="price">4.25</span></p></li>
+                <li data-tags="v gf df"><p class="line"><span class="item">Loose-leaf tea</span><span class="price">3.25</span></p><span class="desc">Ask what's in the tins today</span></li>
               </ul>
             </section>
 
             <section class="menu-section" id="m-breakfast">
               <h3>Breakfast <small>until 11</small></h3>
               <ul class="menu-list">
-                <li data-tags=""><div><span class="item">Breakfast sandwich</span><span class="desc">Egg, aged cheddar and bacon on a house biscuit</span></div><span class="price">$8.50</span></li>
-                <li data-tags="v"><div><span class="item">Veggie breakfast wrap</span><span class="desc">Eggs, spinach, peppers, feta, salsa</span></div><span class="price">$9.00</span></li>
-                <li data-tags="v df"><div><span class="item">Steel-cut oats</span><span class="desc">Berries, toasted seeds, maple. Made with oat milk on request.</span></div><span class="price">$7.50</span></li>
-                <li data-tags="v gf"><div><span class="item">Yogurt parfait</span><span class="desc">Greek yogurt, house granola (GF), seasonal fruit</span></div><span class="price">$6.75</span></li>
+                <li data-tags=""><p class="line"><span class="item">Breakfast sandwich</span><span class="price">8.50</span></p><span class="desc">Egg, aged cheddar and bacon on a house biscuit</span></li>
+                <li data-tags="v"><p class="line"><span class="item">Veggie breakfast wrap</span><span class="price">9.00</span></p><span class="desc">Eggs, spinach, peppers, feta, salsa</span></li>
+                <li data-tags="v df"><p class="line"><span class="item">Steel-cut oats</span><span class="price">7.50</span></p><span class="desc">Berries, toasted seeds, maple. Made with oat milk on request.</span></li>
+                <li data-tags="v gf"><p class="line"><span class="item">Yogurt parfait</span><span class="price">6.75</span></p><span class="desc">Greek yogurt, house granola (GF), seasonal fruit</span></li>
               </ul>
             </section>
           </div>
@@ -122,47 +115,59 @@
             <section class="menu-section" id="m-lunch">
               <h3>Lunch</h3>
               <ul class="menu-list">
-                <li data-tags="v gf"><div><span class="item">Soup of the day</span><span class="desc">Cup or bowl, with fresh bread (GF bread available)</span></div><span class="price">$5.50 / $8</span></li>
-                <li data-tags=""><div><span class="item">Soup and half sandwich</span><span class="desc">Our most popular lunch</span></div><span class="price">$13.50</span></li>
-                <li data-tags=""><div><span class="item">Turkey cranberry</span><span class="desc">Roast turkey, cranberry, brie, greens on sourdough</span></div><span class="price">$12.50</span></li>
-                <li data-tags="v df"><div><span class="item">Roasted vegetable and hummus</span><span class="desc">On multigrain, made dairy-free</span></div><span class="price">$11.50</span></li>
-                <li data-tags=""><div><span class="item">Ham and swiss croissant</span><span class="desc">Warmed, with grainy mustard</span></div><span class="price">$10.50</span></li>
-                <li data-tags="v gf"><div><span class="item">Harvest salad</span><span class="desc">Greens, squash, apple, goat cheese, maple vinaigrette</span></div><span class="price">$12.00</span></li>
+                <li data-tags="v gf"><p class="line"><span class="item">Soup of the day</span><span class="price">5.50 / 8</span></p><span class="desc">Cup or bowl, with fresh bread (GF bread available)</span></li>
+                <li data-tags=""><p class="line"><span class="item">Soup and half sandwich</span><span class="price">13.50</span></p><span class="desc">What most regulars get</span></li>
+                <li data-tags=""><p class="line"><span class="item">Turkey cranberry</span><span class="price">12.50</span></p><span class="desc">Roast turkey, cranberry, brie, greens on sourdough</span></li>
+                <li data-tags="v df"><p class="line"><span class="item">Roasted vegetable and hummus</span><span class="price">11.50</span></p><span class="desc">On multigrain, made dairy-free</span></li>
+                <li data-tags=""><p class="line"><span class="item">Ham and swiss croissant</span><span class="price">10.50</span></p><span class="desc">Warmed, with grainy mustard</span></li>
+                <li data-tags="v gf"><p class="line"><span class="item">Harvest salad</span><span class="price">12.00</span></p><span class="desc">Greens, squash, apple, goat cheese, maple vinaigrette</span></li>
               </ul>
             </section>
 
             <section class="menu-section" id="m-bakery">
               <h3>Bakery</h3>
               <ul class="menu-list">
-                <li data-tags="v" class="star"><div><span class="item">Cinnamon bun</span><span class="desc">The one people drive in for. Dozen for $45.</span></div><span class="price">$4.50</span></li>
-                <li data-tags="v"><div><span class="item">Butter tart</span><span class="desc">Raisin or plain</span></div><span class="price">$3.50</span></li>
-                <li data-tags="v gf"><div><span class="item">Date square</span><span class="desc">Made with oats certified gluten-free</span></div><span class="price">$3.75</span></li>
-                <li data-tags="v gf"><div><span class="item">Gluten-free brownie</span></div><span class="price">$4.25</span></li>
-                <li data-tags="v df"><div><span class="item">Sourdough loaf</span><span class="desc">Baked daily. Best to order ahead on weekends.</span></div><span class="price">$9.00</span></li>
+                <li data-tags="v"><p class="line"><span class="item">Cinnamon bun <span class="scribble">mom's recipe!</span></span><span class="price">4.50</span></p><span class="desc">Dozen for $45. Usually gone by noon on Saturdays.</span></li>
+                <li data-tags="v"><p class="line"><span class="item">Butter tart</span><span class="price">3.50</span></p><span class="desc">Raisin or plain</span></li>
+                <li data-tags="v gf"><p class="line"><span class="item">Date square</span><span class="price">3.75</span></p><span class="desc">Made with certified gluten-free oats</span></li>
+                <li data-tags="v gf"><p class="line"><span class="item">Gluten-free brownie</span><span class="price">4.25</span></p></li>
+                <li data-tags="v df"><p class="line"><span class="item">Sourdough loaf</span><span class="price">9.00</span></p><span class="desc">Baked daily. Order ahead on weekends.</span></li>
               </ul>
             </section>
           </div>
         </div>
-        <p class="menu-key">Prices before GST. Gluten-free items are made in a kitchen that also uses wheat flour.</p>
+        <p class="menu-key">Prices in dollars, before GST. Gluten-free items are made in a kitchen that also uses wheat flour.</p>
       </div>
     </section>
 
-    <section class="photo-strip" aria-label="Photos">
-      <img src="https://images.unsplash.com/photo-1694632288834-17d86b340745?w=900&q=75&auto=format&fit=crop" alt="A pan of iced cinnamon buns" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1729376161051-f5a7a38d5f2d?w=900&q=75&auto=format&fit=crop" alt="A bowl of soup with a sandwich" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1602077812176-1bd3ff433d74?w=900&q=75&auto=format&fit=crop" alt="A loaf of fresh bread" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=900&q=75&auto=format&fit=crop" alt="Coffee shop counter" loading="lazy">
+    <section class="photos container" aria-label="Photos">
+      <figure class="p-big">
+        <img src="https://images.unsplash.com/photo-1694632288834-17d86b340745?w=1100&q=75&auto=format&fit=crop" alt="A pan of iced cinnamon buns" loading="lazy">
+        <figcaption>Saturday's first pan, 6:40 am</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1729376161051-f5a7a38d5f2d?w=700&q=75&auto=format&fit=crop" alt="Tomato soup with croutons and a sandwich" loading="lazy">
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1602077812176-1bd3ff433d74?w=700&q=75&auto=format&fit=crop" alt="Pastries cooling on a tray" loading="lazy">
+      </figure>
+      <figure class="p-wide">
+        <img src="https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=1100&q=75&auto=format&fit=crop" alt="The front counter and window seats" loading="lazy">
+      </figure>
     </section>
 
-    <section id="about" class="section section-alt">
+    <section id="about" class="section">
       <div class="container about-grid">
-        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1000&q=75&auto=format&fit=crop" alt="People sitting and talking inside the café" width="1000" height="750" loading="lazy">
-        <div>
-          <h2>About us</h2>
+        <div class="about-copy">
+          <h2>Our story</h2>
           <p>My mom ran a bakery in Morinville for twenty years, and her cinnamon bun recipe is still the one we use. I opened Bramble &amp; Rye in 2017 with one oven, six tables and a lot of flour.</p>
-          <p>We're still small. Two of us come in at 5 to bake, the soup changes every day, and most people who come in on a weekday morning are regulars. If you're new, say so. We'll tell you what's good today.</p>
-          <p class="signoff">Dana Kowalski<span>Owner and head baker</span></p>
+          <p>We're still small. Two of us come in at 5 to bake, the soup changes every day, and most people in here on a weekday morning are regulars. If it's your first time, tell us. We'll point you at whatever came out of the oven last.</p>
+          <p class="signoff"><span class="sig">Dana</span>Dana Kowalski, owner and head baker</p>
         </div>
+        <figure class="about-photo">
+          <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1000&q=75&auto=format&fit=crop" alt="People sitting and talking inside the café" width="1000" height="750" loading="lazy">
+          <figcaption>The back tables, where the laptop crowd sits.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -170,21 +175,21 @@
       <div class="container order-grid">
         <div>
           <h2>Order ahead</h2>
-          <p class="muted">For pickup, office mornings and family gatherings. Pick what you want and when, and we'll text you to confirm.</p>
+          <p>For pickup, office mornings and family get-togethers. Choose what you want and when, and we'll text you to confirm.</p>
           <dl class="order-facts">
-            <div><dt>Same-day orders</dt><dd>Text by 10 am for pickup after 1</dd></div>
-            <div><dt>Bigger orders</dt><dd>Over $150, please give us 48 hours</dd></div>
-            <div><dt>Questions?</dt><dd><a href="sms:+18254611264">Text (825) 461-1264</a></dd></div>
+            <div><dt>Same day</dt><dd>Order by 10 am, pick up after 1</dd></div>
+            <div><dt>Over $150</dt><dd>Give us 48 hours, please</dd></div>
+            <div><dt>Questions</dt><dd><a href="sms:+18254611264">Text (825) 461-1264</a></dd></div>
           </dl>
         </div>
 
         <form class="order-form" id="order-form" novalidate>
-          <p class="form-step"><span>1</span> What would you like?</p>
+          <p class="form-step"><span>1.</span> What would you like?</p>
           <ul class="order-items" id="order-items">
             <li data-price="4.50"><div><span class="item">Cinnamon bun</span><span class="unit">$4.50 each</span></div><div class="stepper"><button type="button" aria-label="Fewer cinnamon buns">&minus;</button><output aria-live="polite">0</output><button type="button" aria-label="More cinnamon buns">+</button></div></li>
             <li data-price="45"><div><span class="item">Dozen cinnamon buns</span><span class="unit">$45 per dozen</span></div><div class="stepper"><button type="button" aria-label="Fewer dozens">&minus;</button><output aria-live="polite">0</output><button type="button" aria-label="More dozens">+</button></div></li>
             <li data-price="9"><div><span class="item">Sourdough loaf</span><span class="unit">$9 each</span></div><div class="stepper"><button type="button" aria-label="Fewer loaves">&minus;</button><output aria-live="polite">0</output><button type="button" aria-label="More loaves">+</button></div></li>
-            <li data-price="28"><div><span class="item">Soup for four</span><span class="unit">2 litres, today's soup, $28</span></div><div class="stepper"><button type="button" aria-label="Fewer soups">&minus;</button><output aria-live="polite">0</output><button type="button" aria-label="More soups">+</button></div></li>
+            <li data-price="28"><div><span class="item">Soup for four</span><span class="unit">2 litres of the day's soup, $28</span></div><div class="stepper"><button type="button" aria-label="Fewer soups">&minus;</button><output aria-live="polite">0</output><button type="button" aria-label="More soups">+</button></div></li>
             <li data-price="85"><div><span class="item">Sandwich platter</span><span class="unit">Serves 10, $85</span></div><div class="stepper"><button type="button" aria-label="Fewer platters">&minus;</button><output aria-live="polite">0</output><button type="button" aria-label="More platters">+</button></div></li>
             <li data-price="32"><div><span class="item">Coffee to go box</span><span class="unit">Serves 10, $32</span></div><div class="stepper"><button type="button" aria-label="Fewer coffee boxes">&minus;</button><output aria-live="polite">0</output><button type="button" aria-label="More coffee boxes">+</button></div></li>
           </ul>
@@ -194,20 +199,20 @@
           </div>
           <p class="items-error" id="items-error" role="alert" hidden>Add at least one item.</p>
 
-          <p class="form-step"><span>2</span> When?</p>
+          <p class="form-step"><span>2.</span> When should we have it ready?</p>
           <div class="field-row">
             <div class="field">
-              <label for="pickup-day">Pickup day</label>
+              <label for="pickup-day">Day</label>
               <select id="pickup-day" name="day" required></select>
             </div>
             <div class="field">
-              <label for="pickup-time">Pickup time</label>
+              <label for="pickup-time">Time</label>
               <select id="pickup-time" name="time" required></select>
             </div>
           </div>
           <p class="notice" id="notice" hidden></p>
 
-          <p class="form-step"><span>3</span> Your details</p>
+          <p class="form-step"><span>3.</span> Who's picking up?</p>
           <div class="field-row">
             <div class="field">
               <label for="name">Name</label>
@@ -220,10 +225,10 @@
           </div>
           <div class="field">
             <label for="notes">Notes <span class="opt">(optional)</span></label>
-            <textarea id="notes" name="notes" rows="2" placeholder="For example: half the buns without icing, please."></textarea>
+            <textarea id="notes" name="notes" rows="2" placeholder="Half the buns without icing, please."></textarea>
           </div>
-          <button type="submit" class="btn btn-accent btn-block">Send order</button>
-          <p class="form-fine">You pay when you pick up. We only use your number to confirm this order.</p>
+          <button type="submit" class="btn btn-berry btn-block">Send order</button>
+          <p class="form-fine">You pay at pickup. We only use your number to confirm this order.</p>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -235,16 +240,16 @@
           <h2>Hours &amp; location</h2>
           <table class="hours" aria-label="Opening hours">
             <tbody>
-              <tr data-day="1"><th scope="row">Monday</th><td>7:00 am to 4:00 pm</td></tr>
-              <tr data-day="2"><th scope="row">Tuesday</th><td>7:00 am to 4:00 pm</td></tr>
-              <tr data-day="3"><th scope="row">Wednesday</th><td>7:00 am to 4:00 pm</td></tr>
-              <tr data-day="4"><th scope="row">Thursday</th><td>7:00 am to 4:00 pm</td></tr>
-              <tr data-day="5"><th scope="row">Friday</th><td>7:00 am to 4:00 pm</td></tr>
-              <tr data-day="6"><th scope="row">Saturday</th><td>8:00 am to 4:00 pm</td></tr>
-              <tr data-day="0"><th scope="row">Sunday</th><td>9:00 am to 2:00 pm</td></tr>
+              <tr data-day="1"><th scope="row">Monday</th><td>7 am &ndash; 4 pm</td></tr>
+              <tr data-day="2"><th scope="row">Tuesday</th><td>7 am &ndash; 4 pm</td></tr>
+              <tr data-day="3"><th scope="row">Wednesday</th><td>7 am &ndash; 4 pm</td></tr>
+              <tr data-day="4"><th scope="row">Thursday</th><td>7 am &ndash; 4 pm</td></tr>
+              <tr data-day="5"><th scope="row">Friday</th><td>7 am &ndash; 4 pm</td></tr>
+              <tr data-day="6"><th scope="row">Saturday</th><td>8 am &ndash; 4 pm</td></tr>
+              <tr data-day="0"><th scope="row">Sunday</th><td>9 am &ndash; 2 pm</td></tr>
             </tbody>
           </table>
-          <p class="small-note">Patio open May to September. Dogs welcome on the patio.</p>
+          <p class="small-note">Patio's open May to September, and dogs are welcome out there.</p>
         </div>
         <div class="map-card">
           <div class="map"><iframe src="https://maps.google.com/maps?q=St.%20Albert%2C%20Alberta&amp;z=14&amp;output=embed" title="Map of St. Albert, Alberta" loading="lazy"></iframe></div>
@@ -258,23 +263,23 @@
 
     <section id="faq" class="section section-alt">
       <div class="container faq-grid">
-        <h2>Common questions</h2>
+        <h2>Good to know</h2>
         <div class="faq">
           <details>
             <summary>Do you have Wi-Fi?</summary>
-            <p>Yes. The password is on the chalkboard by the counter. We ask laptop folks to give up big tables over the lunch rush.</p>
+            <p>Yes. The password is on the chalkboard by the till. Over the lunch rush we ask laptop folks to give up the big tables.</p>
           </details>
           <details>
             <summary>Can I order cinnamon buns for a party?</summary>
-            <p>Yes. Use the order form above or text us. For more than four dozen, please give us 48 hours.</p>
+            <p>Yes. Use the order form above or text us. For more than four dozen, give us 48 hours.</p>
           </details>
           <details>
             <summary>What can I eat if I'm gluten-free?</summary>
-            <p>The soup, salad, parfait, date squares and brownies are all made without gluten, and we keep gluten-free bread. We bake with wheat flour in the same kitchen, so we can't promise zero cross-contact.</p>
+            <p>The soup, salad, parfait, date squares and brownies are made without gluten, and we keep gluten-free bread. We bake with wheat flour in the same kitchen, so we can't promise zero cross-contact.</p>
           </details>
           <details>
             <summary>Do you cater?</summary>
-            <p>For small groups, yes: sandwich platters, soup, baking and coffee boxes for up to about 40 people. Text us with the date and headcount.</p>
+            <p>For small groups, yes: sandwich platters, soup, baking and coffee boxes for up to about 40 people. Text us the date and headcount.</p>
           </details>
         </div>
       </div>
@@ -285,22 +290,19 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a href="#top" class="brand">
-          <span class="brand-mark" aria-hidden="true">B</span>
-          <span class="brand-text">Bramble &amp; Rye<span>Café &amp; Bakery</span></span>
-        </a>
-        <p class="small">Café and bakery in downtown St. Albert.</p>
+        <a href="#top" class="brand">Bramble <span class="amp">&amp;</span> Rye</a>
+        <p class="small">12 Bramble Street, St. Albert<br>Open 7 days</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="#menu">Menu</a>
-        <a href="#about">About</a>
+        <a href="#about">Our story</a>
         <a href="#order">Order ahead</a>
         <a href="#visit">Hours &amp; location</a>
-        <a href="#faq">Questions</a>
+        <a href="#faq">Good to know</a>
       </nav>
       <div class="demo-credit">
-        <p><strong>This is a demo site.</strong> Bramble &amp; Rye Café is not a real business.</p>
-        <p>Designed and built by Samuel Olabode, web developer in Edmonton. Want one for your business? Text <a href="sms:+18254611264">825-461-1264</a>.</p>
+        <p><strong>This is a demo site.</strong> Bramble &amp; Rye isn't a real café.</p>
+        <p>Designed and built by Samuel Olabode, a web developer in Edmonton. Want a site like this for your business? <a href="sms:+18254611264">Text 825-461-1264</a>.</p>
       </div>
     </div>
     <div class="container footer-base">
@@ -310,7 +312,7 @@
 
   <div class="mobile-cta" aria-label="Quick links">
     <a href="#menu" class="btn btn-light">Menu</a>
-    <a href="#order" class="btn btn-accent">Order ahead</a>
+    <a href="#order" class="btn btn-berry">Order ahead</a>
   </div>
 
   <script src="script.js" defer></script>
