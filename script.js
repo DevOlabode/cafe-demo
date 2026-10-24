@@ -20,6 +20,19 @@ document.querySelectorAll('img').forEach((img) => {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+document.querySelector('.demo-close').addEventListener('click', () => {
+  document.getElementById('demo-note').classList.add('hidden');
+});
+
+// Dietary marks after each menu item, from its data-tags
+document.querySelectorAll('.menu-list li').forEach((li) => {
+  if (!li.dataset.tags) return;
+  const mark = document.createElement('span');
+  mark.className = 'diet';
+  mark.textContent = li.dataset.tags;
+  li.querySelector('.item').append(mark);
+});
+
 // ---------- Hours, open status, today's soup ----------
 // Opening hours by weekday (0 = Sunday), in 24h decimal hours
 const HOURS = { 0: [9, 14], 1: [7, 16], 2: [7, 16], 3: [7, 16], 4: [7, 16], 5: [7, 16], 6: [8, 16] };
@@ -61,7 +74,7 @@ const now = localNow();
   const statusEl = document.getElementById('open-status');
   const detailEl = document.getElementById('open-detail');
   const dot = document.getElementById('status-dot');
-  document.querySelector(`.hours tr[data-day="${now.day}"]`)?.classList.add('today');
+  document.querySelector(`.hours tr[data-days~="${now.day}"]`)?.classList.add('today');
   document.getElementById('soup').textContent = SOUPS[now.day];
 
   if (now.hour >= open && now.hour < close) {
@@ -107,6 +120,9 @@ const daySel = document.getElementById('pickup-day');
 const timeSel = document.getElementById('pickup-time');
 const notice = document.getElementById('notice');
 const statusMsg = document.getElementById('form-status');
+const receiptLines = document.getElementById('receipt-lines');
+const whenEl = document.getElementById('receipt-when');
+const GST = 0.05;
 const BIG_ORDER = 150;
 const money = (n) => `$${n.toFixed(2)}`;
 
@@ -120,7 +136,22 @@ function updateTotal() {
     li.classList.toggle('has-qty', qty > 0);
     li.querySelector('.stepper button').disabled = qty === 0;
   });
-  totalEl.textContent = money(orderTotal());
+  const sub = orderTotal();
+  totalEl.textContent = money(sub);
+  document.getElementById('order-gst').textContent = money(sub * GST);
+  document.getElementById('order-grand').textContent = money(sub * (1 + GST));
+  receiptLines.innerHTML = '';
+  items.forEach((li) => {
+    const qty = Number(li.querySelector('output').textContent);
+    if (!qty) return;
+    const row = document.createElement('li');
+    row.append(`${qty} x ${li.querySelector('.item').textContent}`);
+    const amt = document.createElement('span');
+    amt.textContent = money(qty * Number(li.dataset.price));
+    row.append(amt);
+    receiptLines.append(row);
+  });
+  if (!receiptLines.children.length) receiptLines.innerHTML = '<li class="receipt-empty">Nothing yet.</li>';
   if (orderTotal() > 0) itemsError.hidden = true;
   checkNotice();
 }
@@ -158,7 +189,13 @@ function buildTimes() {
     timeSel.add(new Option(fmtHour(t), String(t)));
   }
   if ([...timeSel.options].some((o) => o.value === previous)) timeSel.value = previous;
+  showWhen();
 }
+
+function showWhen() {
+  whenEl.textContent = `${daySel.selectedOptions[0].text.replace(/, \w+ \d+$/, '')}, ${timeSel.selectedOptions[0]?.text || ''}`;
+}
+timeSel.addEventListener('change', showWhen);
 
 // Orders over $150 need 48 hours
 function bigOrderTooSoon() {
@@ -217,7 +254,7 @@ form.addEventListener('submit', (e) => {
 
   const first = name.value.trim().split(' ')[0];
   const when = `${daySel.selectedOptions[0].text.replace(/^(Today|Tomorrow), /, '')} at ${timeSel.selectedOptions[0].text}`;
-  statusMsg.textContent = `Thanks ${first}. We'll text you to confirm your ${money(orderTotal())} order for ${when}. (This is a demo site, so nothing was actually sent.)`;
+  statusMsg.textContent = `Thanks ${first}. We'll text you to confirm your ${money(orderTotal() * (1 + GST))} order for ${when}. (This is a demo site, so nothing was actually sent.)`;
   statusMsg.classList.add('ok');
 
   form.reset();
