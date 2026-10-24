@@ -135,13 +135,12 @@ p { margin: 0 0 1em; }
 .photos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); background: var(--paper-2); }
 .photos figcaption { font-family: var(--hand); font-size: 1.35rem; color: var(--ink); margin-top: 6px; transform: rotate(-1.5deg); }
 
-/* About */
-.about-grid { display: grid; gap: 36px; align-items: center; }
-.about-copy { max-width: 34em; }
-.about-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); background: var(--paper-2); }
-.about-photo figcaption { font-size: .9rem; color: var(--muted); margin-top: 10px; }
-.signoff { color: var(--muted); font-size: .95rem; margin-top: 18px; }
-.sig { display: block; font-family: var(--hand); font-size: 2.6rem; color: var(--berry); line-height: 1; transform: rotate(-3deg); transform-origin: left; margin-bottom: 4px; }
+/* Our story, written as a short letter */
+.letter { max-width: 620px; margin: 0 auto; background: var(--card); padding: 36px 26px; border-top: 6px solid var(--berry); box-shadow: 0 10px 30px rgba(42,31,27,.08); transform: rotate(.4deg); }
+.letter h2 { font-family: var(--sans); font-size: .9rem; font-weight: 700; letter-spacing: .04em; color: var(--rye); margin-bottom: 18px; }
+.hello { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--ink); line-height: 1.15; }
+.signoff { color: var(--muted); font-size: .95rem; margin: 26px 0 0; }
+.sig { display: block; font-family: var(--hand); font-size: 2.8rem; color: var(--berry); line-height: 1; transform: rotate(-3deg); transform-origin: left; margin-bottom: 4px; }
 
 /* Order ahead: form on the left, a live till receipt on the right */
 .order-head { max-width: 640px; margin-bottom: 32px; }
@@ -257,7 +256,7 @@ input:focus, select:focus, textarea:focus { border-bottom-color: var(--berry); o
   .section { padding: 96px 0; }
   .menu-card { padding: 56px 64px 40px; }
   .menu-grid { grid-template-columns: 1fr 1fr; gap: 72px; }
-  .about-grid { grid-template-columns: 1fr 1.1fr; gap: 72px; }
+  .letter { padding: 56px 64px; }
   .order-form { grid-template-columns: 1fr 360px; gap: 72px; }
   .receipt { position: sticky; top: 24px; }
   .visit > * { grid-area: 1 / 1; }
